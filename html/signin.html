@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Строительная компания "Вольфрам"</title>
+    <link rel="stylesheet" href="../styles/styles_register.css"></head>
+<body>
+    <script src="https://accounts.google.com/gsi/client" async></script>
+    <div class="container__wrapper">
+        <header>
+            <nav class="nav__div">
+                <ul class="ul__mobile--menu" id="mobileMenu" style="display: none;">
+                    <li><a href="./main.html">Главная</a></li>
+                    <li><a href="./about.html">О компании</a></li>
+                    <li><a href="./servises.html">Услуги</a></li>
+                    <li><a href="./projects.html">Контакты</a></li>
+                </ul>
+    
+                <div class="header">
+                    <img src="../src/logo/logo.svg" alt="logo">
+                    <ul class="ul__nav">
+                        <li><a href="./main.html">Главная</a></li>
+                        <li><a href="./about.html">О компании</a></li>
+                        <li><a href="./servises.html">Услуги</a></li>
+                        <li><a href="./projects.html">Контакты</a></li>
+                    </ul>
+                    <ul class="ul__nav --mobile --not-mobile">
+                        <li><a href="./main.html">Главная</a></li>
+                        <li><a href="./about.html">О компании</a></li>
+                        <li><a href="./servises.html">Услуги</a></li>
+                        <li><a href="./projects.html">Контакты</a></li>
+                    </ul>
+                    <p><a class="tel" href="tel:+79393463254">Связаться с нами: <br> <strong>+7(939)346-32-54</strong></a></p>
+                </div>
+                <div class="header --mobile">
+                    <div class="header__div">
+                        <img src="../src/logo/logo.svg" alt="logo">
+                        <p><a class="tel" href="tel:+79393463254">Связаться с нами: <br> <strong>+7(939)346-32-54</strong></a></p>
+                    </div> 
+                    <button id="buttonMenu" onClick="mobileMenu()"><img src="../src/logo/menu.svg"></button>
+                </div>
+                <div>
+                </div>
+            </nav>
+        </header>
+        <section class="register__form">
+            <div class="frm--button">
+                <button class="frm--left --chosen"><p>Войти</p></button>
+                <button class="frm--right"><p>Регистрация</p></button>
+            </div>
+            <form>
+                <h2>Вход</h2>
+                <input type="email" class="email" placeholder="Почта"></input>
+                <input type="text" class="password" placeholder="Пароль"></input>
+                <div class="submit__div">
+                    <button class="submit" type="submit">Войти</button>
+                    <p>или</p>
+                    <!--  -->
+                    <div>
+                        <div id="g_id_onload"
+                            data-client_id="YOUR_GOOGLE_CLIENT_ID"
+                            data-login_uri="https://your.domain/your_login_endpoint"
+                            data-auto_prompt="false">
+                        </div>
+                        <div class="g_id_signin"
+                            data-type="standard"
+                            data-size="large"
+                            data-theme="outline"
+                            data-text="sign_in_with"
+                            data-shape="rectangular"
+                            data-logo_alignment="left">
+                        </div>
+                    </div>
+                    <!--  -->
+                    <p>Уже есть аккаунт? <a href="#">Войти</a></p>
+                </div>
+
+            </form>
+
+        </section>
+        <footer>
+            <div class="footer --not-mobile">
+                <img src="../src/logo/logo.svg" alt="logo">
+                <div></div>
+                    <ul class="ul__footer">
+                        <li><a href="./main.html">Главная</a></li>
+                        <li><a href="./about.html">О компании</a></li>
+                        <li><a href="./servises.html">Услуги</a></li>
+                        <li><a href="./projects.html">Контакты</a></li>
+                    </ul>
+                    <div class="ul__footer--contacts">
+                        <a href="mailto:Volfraim.spb@gmail.com">Volfraim.spb@gmail.com</a>
+                        <br>
+                        <a href="#" class="rules">Политика конфиденциальности</a>
+                    </div>
+                <div class="footer__ul --mobile">
+                    <div>
+                        <a href="./main.html">Главная</a>
+                        <a href="./about.html">О компании</a>
+                        <a href="./servises.html">Услуги</a>
+                        <a href="./projects.html">Контакты</a>
+                    </div>
+                    <a href="mailto:Volfraim.spb@gmail.com">Volfraim.spb@gmail.com</a>
+                    <br>
+                    <a href="#" class="rules">Политика конфиденциальности</a>
+               
+                </div>
+
+                <div class="social--media --not-mobile">
+                    <a><img src="../src/icons/tg.svg" alt="telegram"></a>
+                    <a><img src="../src/icons/whatsapp.svg" alt="whatApp"></a>
+                    <a><img src="../src/icons/vk.svg" alt="vkontakte"></a>
+                </div>
+                <p>Связаться с нами:<br><strong>+7 999 999 99 99</strong></p>
+            </div>
+
+            <div class="footer__ul --mobile-double">
+                <div>
+                <img src="../src/logo/logo.svg" alt="logo">
+                <p>Связаться с нами:<br><strong>+7 999 999 99 99</strong></p>
+                </div>
+                <div>
+                    <li><a href="./main.html">Главная</a></li>
+                    <li><a href="./about.html">О компании</a></li>
+                    <li><a href="./servises.html">Услуги</a></li>
+                    <li><a href="./projects.html">Контакты</a></li>
+                </div>
+                <span>
+                    <a href="mailto:Volfraim.spb@gmail.com">Volfraim.spb@gmail.com</a>
+                    <br>
+                    <a href="#" class="rules">Политика конфиденциальности</a>
+                </span>
+            <div>
+                </div>
+            </div>
+    </footer>
+    </div>
+</div>
+<script>
+    function showPage(pageId) {    
+        const doc = document.getElementById('mobileMenu')   
+        doc.style.display = "none";
+        document.body.scrollTop = 0; 
+        document.documentElement.scrollTop = 0; 
+
+        document.getElementById("mainPage").style.display = "none";
+        document.getElementById("servicesPage").style.display = "none";
+        document.getElementById("aboutPage").style.display = "none";
+        document.getElementById("cardPage").style.display = "none";
+        document.getElementById("projectPage").style.display = "none";
+        document.getElementById("projectsPage").style.display = "none";
+
+        document.getElementById('premier-square').style.display = "none";
+        document.getElementById('modern-loft').style.display = "none";
+        document.getElementById('city-sunlight').style.display = "none";
+        document.getElementById(pageId).style.display = "block";
+    }
+
+    function mobileMenu(){
+            const doc = document.getElementById('mobileMenu')
+            const btn = document.getElementById("buttonMenu")
+            doc.style.position = "absolute" 
+            doc.style.right = '3vw'
+            doc.style.flexDirection = 'column';
+
+            var rect = btn.getBoundingClientRect().bottom;
+            console.log(rect.bottom)
+            var buttonX = rect.left + window.scrollX;
+            var buttonY = rect.top + window.scrollY;
+            var elementX = event.clientX;
+            var elementY = event.clientY;
+            var offsetX = elementX - buttonX;
+            var offsetY = elementY - buttonY;
+            doc.style.top = `${rect + 5}px`
+            doc.style.display = (doc.style.display === "flex") ? "none" : "flex";
+        }
+
+</script>
+</body>
+</html>

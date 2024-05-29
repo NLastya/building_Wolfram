@@ -1,0 +1,1159 @@
+@font-face {
+  font-family: 'Moncerrat';
+  src: url('../fonts/Montserrat-Regular.woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Moncerrat SemiBold';
+  src: url('../fonts/Montserrat-SemiBold.woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Moncerrat Medium';
+  src: url('../fonts/Montserrat-Medium.woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Moncerrat Bold';
+  src: url('../fonts/Montserrat-Bold.woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+  
+  /**
+    Нормализация блочной модели
+   */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  /**
+    Убираем внутренние отступы слева тегам списков,
+    у которых есть атрибут class
+   */
+  :where(ul, ol):where([class]) {
+    padding-left: 0;
+  }
+  
+  /**
+    Убираем внешние отступы body и двум другим тегам,
+    у которых есть атрибут class
+   */
+  body,
+  :where(blockquote, figure):where([class]) {
+    margin: 0;
+  }
+  
+  /**
+    Убираем внешние отступы вертикали нужным тегам,
+    у которых есть атрибут class
+   */
+  :where(
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol,
+    dl
+  ):where([class]) {
+    margin-block: 0;
+  }
+
+  
+  :where(dd[class]) {
+    margin-left: 0;
+  }
+  
+  :where(fieldset[class]) {
+    margin-left: 0;
+    padding: 0;
+    border: none;
+  }
+  
+  /**
+    Убираем стандартный маркер маркированному списку,
+    у которого есть атрибут class
+   */
+  :where(ul[class]) {
+    list-style: none;
+  }
+  
+  /**
+    Обнуляем вертикальные внешние отступы параграфа,
+    объявляем локальную переменную для внешнего отступа вниз,
+    чтобы избежать взаимодействие с более сложным селектором
+   */
+  p {
+    --paragraphMarginBottom: 24px;
+  
+    margin-block: 0;
+  }
+  
+  /**
+    Внешний отступ вниз для параграфа без атрибута class,
+    который расположен не последним среди своих соседних элементов
+   */
+  p:where(:not([class]):not(:last-child)) {
+    margin-bottom: var(--paragraphMarginBottom);
+  }
+  
+  
+  /**
+    Упрощаем работу с изображениями
+   */
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /**
+    Наследуем свойства шрифт для полей ввода
+   */
+  /* input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+  } */
+  
+  html {
+    /**
+      Пригодится в большинстве ситуаций
+      (когда, например, нужно будет "прижать" футер к низу сайта)
+     */
+    height: 100%;
+  }
+  
+  /**
+    Плавный скролл
+   */
+  html,
+  :has(:target) {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    /**
+      Пригодится в большинстве ситуаций
+      (когда, например, нужно будет "прижать" футер к низу сайта)
+     */
+    min-height: 100%;
+    /**
+      Унифицированный интерлиньяж
+     */
+    line-height: 1.5;
+  }
+  
+  /**
+    Приводим к единому цвету svg-элементы
+   */
+  svg *[fill] { fill: currentColor }
+  svg *[stroke] { stroke: currentColor }
+  
+  /**
+    Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+   */
+  svg * {
+    transition-property: fill, stroke;
+  }
+  
+  /**
+    Удаляем все анимации и переходы для людей,
+    которые предпочитают их не использовать
+   */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  /* ------------------------------------------------------------- Общие стили */
+  :root{
+    --color-dark-blue: #1B18CB;
+    --color-dark-white: #ffffff;
+    --color-medium-blue: #D6DFFF;
+    --color-light-blue: #F2F2FF;
+    --white: #ffffff;
+    --color-black: #000000;
+    --color-medoum-grey: #AEAAAA;
+  
+  }
+  
+  body{
+    font-size: 24px;
+    font-family: 'Moncerrat Medium';
+    background-color: var(--color-light-blue);
+    /* padding: 0px 207px 0px 210px; */
+  
+  }
+  
+  .container__wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    max-width: 1500px;
+    min-width: 1200px;
+    margin: 0 auto;
+    width: 80vw;
+  }
+  
+  button{
+    /* border-radius: 60px; */
+    padding: 24px 45px 24px 44px;
+    font-size: 28px;
+  }
+  
+  .btn--blue{
+    background-color: var(--color-dark-blue);
+    color: var(--white);
+    font-size: 28px;
+    box-shadow: 0 3 0 30 var(--color-dark-blue);
+    border: 0px;
+  }
+  
+  .btn--white{
+    font-size: 24px;
+    border: 2px solid var(--color-dark-blue);
+    background-color: var(--color-light-blue);
+    color: var(--color-dark-blue);
+    font-family: 'Moncerrat Bold';
+    padding: 18px 42px 16px;
+  
+  }
+  
+  li.--mobile{
+    display: none;
+  }
+  
+  .header.--mobile{
+    display: none;
+   }
+  /* ----------------------------------------------------------- */
+  
+  .header{
+    font-size: 14px;
+    font-family: 'Moncerrat';
+    color: var(--color-black);
+    margin-bottom: 3vw;
+  }
+  .nav__div{
+    width: 90vw
+  }
+  
+  .header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+  
+  }
+  
+  .hero h1{
+    margin: 0;
+    margin-bottom: 27px;
+    letter-spacing: 0.3vb;
+  }
+  
+  .ul__nav{
+    max-width: 483px;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .ul__nav.--mobile{
+    display: none;
+  }
+  
+  .ul__nav>li{
+    display: inline;
+  
+  }
+  
+  .ul__nav a{
+    color: var(--color-black);
+    text-decoration: none;
+  
+  }
+  
+  .ul__nav > a:hover{
+   color: var(--color-dark-blue);
+  
+  }
+  
+  .--mobile{
+    display: none;
+  }
+  
+  .--mobile-double{
+    display: none;
+  }
+
+  .mobile-nav{
+    float: left;
+    display: flex;
+    width: 100%;
+    /* position: absolute; */
+    /* left: 0; */
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: stretch;
+    right: 0;
+    top: 0;
+    justify-content: column;
+    background-color: var(--color-dark-white);
+    color: var(--color-dark-blue);
+    transition: linear;
+  }
+
+  .mobile-nav >  nav > ul > li{
+    list-style: none;
+  }
+
+  .mobile-nav a{
+    text-decoration: none;
+    color: var(--color-dark-blue);
+  }
+  
+  /* --------------------------------------------form-секция */
+
+  .register__form{
+    background-color: var(--white);
+    border-radius: 30px;
+    width: 60vw;
+    min-width: 200px;
+    max-width: 600px;
+    margin-bottom: 4vh;
+    padding-top: 5vh;
+    height: 100vh;
+  }
+  
+  form{
+    min-width: 180px;
+    max-width: 440px;
+    margin: 0px auto 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    width: 55vw;
+    gap: 40px;
+
+  }
+
+  form > input{
+    border: none;
+    border-bottom: 2px solid var(--color-medoum-grey);
+    max-width: 440px;
+    height: 24px;
+    box-sizing: border-box;
+    /* padding: 0 45%; */
+    overflow:visible;
+    padding-bottom: px;
+  }
+
+  .name{
+    padding-left: 45%;
+  }
+  .secondName{
+    padding-left: 40%;
+  }
+  .email{
+    padding-left: 44%;
+  }
+  .password{
+    padding-left: 42%;
+  }
+  .secondPasswonrd{
+    padding-left: 30.5%;
+  }
+  .telephone{
+    padding-left: 40%;
+  }
+
+  form>input::placeholder{
+    color: var(--color-medoum-grey);
+    margin: auto;
+    font-size: 20px;
+  }
+  .frm--button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;   
+    height: 70px;
+    gap: 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    margin-bottom: 3vh;
+  }
+
+  .frm--button > button{
+    border: none;
+    font-size: 18px;
+    font-family: 'Moncerrat Medium';
+    cursor: pointer;
+    width: 24vw;
+  }
+
+  .submit__div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .submit{
+    background-color: var(--color-black);
+    color: var(--white);
+    border-radius: 15px;
+    padding: 14px 55px;
+    border: none;
+    cursor: pointer;
+    max-width: 250px;
+    /* height: 48px; */
+    margin: auto;
+    font-size: 16px;
+
+  }
+  .submit.--form{
+    background-color: var(--color-dark-blue);
+  }
+
+  .frm--button > button > p{
+    margin: 0;
+    color: var(--color-black);
+  }
+    /* ---------------------------------------------------------------------------------Сектор с ключами */
+  p{
+    font-size: 16px;
+    color: #676767;
+    text-align: center;
+    margin: 0;
+  }
+  h2{
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+  }
+
+  .g_id_signin{
+    max-width: 250px;
+    margin: auto;
+  }
+
+  .frm--left{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: var(--color-dark-white);
+    background-color: #D9D9D9;
+    
+  }
+  .frm--right{
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: var(--color-dark-white);
+    background-color: #D9D9D9;
+  }
+
+  .frm--button > .--chosen{
+    background-color: var(--color-dark-blue);
+    color: var(--white);
+  }
+
+  .frm--button > .--chosen > p{
+    color: var(--white);
+  }
+  
+  
+
+  .grid{
+    width: 100%;
+    display: grid;
+    grid-template-rows: minmax(354px, auto) minmax(384px, auto);
+    grid-template-columns: 1fr 0.87fr 1fr;
+    margin-bottom: 98px;
+    
+  }
+  
+  .grid.--mobile{
+    display: none;
+  }
+  
+  .grid > div{
+      /* max-width: 354px; */
+      overflow: hidden;
+  }
+  
+  .grid > div > img{
+    /* width: auto; Автоматическая ширина изображения */
+    height: 100%; 
+    object-fit: fill;
+  }
+  .grid p{
+    font-size: 24px;
+    line-height: 1.25;
+    margin: 0;
+  }
+  
+  .grid h3{
+    color: var(--color-dark-blue);
+    font-size: 24px;
+    font-family: 'Moncerrat SemiBold';
+    margin: 0;
+  
+  }
+  
+  .grid-1{
+    padding-left: 3%;
+  }
+  .grid-3{
+    padding-left: 3%;
+  }
+  .grid-5{
+      padding-left: 3%;
+  }
+  
+  .grid > div > button{
+    display: block;
+    margin: 0 auto;
+    font-size: clamp(0.5rem, 1.5vw, 2rem);
+    padding: 18px 42px 18px;
+    font-size: 24px;
+  }
+  
+  input:focus-visible{
+    outline: none;
+  }
+  
+  /* -------------------------------------------------------------------------------------------------------------------- */
+  /* -------------------------------------------Контакты */
+  .map{
+    /* width: 80vw; */
+    height: 80vh;
+    margin: 0 auto;
+    margin-bottom: 6vh;
+  }
+  .map__flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  /* -------------------------------------------------------------------------------------------------------------------- */
+  
+  
+  .contacts{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  /* -----------------------------------------------------------------------------------------------------------Footer */
+  footer{
+    width: 90vw;
+  }
+
+  .footer{
+    font-size: 14px;
+    font-family: 'Moncerrat';
+    color: var(--color-black);
+  }
+  
+  .footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+  
+  }
+  
+  .ul__footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    max-width: 228px;
+    width: 50%;
+  }
+  
+  .footer__ul.--mobile{
+    display: none;
+  }
+  
+  .ul__footer>li{
+    display: inline;
+  
+  }
+  
+  .footer a{
+    color: var(--color-black);
+    text-decoration: none;
+  }
+  
+  .footer > div > .rules{
+    text-decoration: solid;
+  }
+  
+  .ul__footer > a:hover{
+   color: var(--color-dark-blue);
+  
+  }
+  
+  .footer .social--media > a > img{
+    width: 37px;
+    height: 37px;
+  }
+  
+  .social--media > a{
+      display: inline-block;
+  }
+  
+  /* -------------------------------------------------------------------------------------------------------------------- */
+  
+  
+  
+  /* --------------------------------------------Media-pal */
+  @media(max-width: 1200px){
+    /* Общие стили */
+    button{
+      font-size: 20px;
+    }
+    .btn--blue{
+      font-size: 24px;
+      padding: 11px 14px 11px;
+    }
+  
+    .container__wrapper{
+      max-width: 704px;
+      min-width: 428px;
+      width: 80vw;
+    }
+  
+    li.--mobile{
+      display: none;
+    }
+    /* --------------------------------Header */
+    .ul__nav{
+      display: none;
+    }
+    .ul__nav.--mobile{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 198px;
+    }
+  
+    .header > img{
+      width: 20vw;
+    }
+  /* ------------------------------------- */
+  /* --------------------------------Hero */
+  
+  .hero__div{
+    gap: 12px;
+  }
+     .hero h1{
+      font-size: 40px;
+     }
+     .hero h4{
+      font-size: 20px;
+     }
+  
+    .hero__div--left > h1{
+      margin-bottom: 6vh;
+      letter-spacing: normal;
+    }
+  
+    .hero__div--left > h4{
+      margin-bottom: 6vh;
+    }
+  
+    .hero__div--left > button{
+      margin-bottom: 2vh;
+    } 
+    .hero__ul{
+      display: none;
+    }
+  
+    .hero__ul.--mobile{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4vh;
+    }
+  
+    .hero__ul>li{
+      font-size: 14px;
+    }
+  
+    .hero__img{
+      height: 354px;
+      margin: 0;
+    }
+  
+    .hero__img > img{
+      height: 354px;
+      border-radius: 60px;
+    }
+  
+
+/* ------------------------------------------------------------- input */
+.input-with-label {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.input-with-label input {
+  border: none;
+  border-bottom: 2px solid var(--color-medoum-grey);
+  max-width: 440px;
+  height: 20px;
+  padding: 0 20vw;
+}
+
+.input-with-label label {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  background: transparent;
+  padding: 0 5px;
+  color: #999;
+  transition: all 0.3s;
+  margin: 0 auto;
+}
+
+.input-with-label input:focus + label { 
+  top: -15px;
+  font-size: 80%;
+  color: #333;
+}
+/* ------------------------------------ */
+
+  /* ------------------------------------------------ */
+  /* ----------------------------------------- Ключи */
+
+  .frm--button{
+    max-width: fit-content;
+    height: auto;
+  }
+  /* ------------------------------------------------ */
+  /* -------------------------------------------Grid */
+  .grid{
+    display: none;
+  }
+  
+  .grid.--mobile{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 22px;
+  }
+  
+  .grid > div > img{
+    width: 100%;
+    margin-top: 24px;
+  }
+  
+  .grid > div >  h3{
+    margin-bottom: 24px;
+  }
+  
+  .grid-1{
+    padding-left: 0;
+  }
+  .grid-3{
+    padding-left: 0;
+  }
+  .grid-5{
+    padding-left: 0;
+  }
+  
+  .grid > div > button{
+    display: block;
+    margin: 0 auto;
+  }
+  /* ------------------------------------------------ */
+  .contacts{
+    flex-direction: column;
+  }
+  
+  .map{
+    width: 80vw;
+    height: 30vh;
+  }
+  
+  .social--media > a >img{
+    height: 3.8vh;
+  }
+  /* -------------------------------------------Footer */
+  .ul__footer{
+    display: none;
+  }
+  .ul__footer--contacts{
+    display: none;
+  }
+  
+  .ul__footer > li{
+    display: inline-block;
+    max-width: 306px;
+  }
+  
+  .social--media{
+    width: 37px;
+    height: 37px;
+    display: inline;
+  }
+  
+  .social--media > a{
+    display: inline-block;
+  }
+  
+  .social--media.--not-mobile{
+    display: none;
+  }
+  
+  .footer__ul.--mobile{
+    display: block;
+    font-size: 14px;
+  }
+  
+  .rules{
+    text-decoration: solid;
+  }
+  address{
+    font-size: 20px;
+    font-style: normal;
+  }
+  .footer > img{
+    width: 20vw;
+    max-width: 200px;
+  }
+  /* ------------------------------------------------ */
+  
+  
+  }
+  
+  
+  /* ---------------------------------------------------Mobile */
+  @media(max-width: 900px){
+    /* Общие стили */
+    button{
+      font-size: 16px;
+    }
+    .btn--blue{
+      font-size: 16px;
+      padding: 20px 32px 20px;
+    }
+  
+    .btn--white{
+      font-size: 16px;
+    }
+  
+    .container__wrapper{
+      max-width: 704px;
+      min-width: 200px;
+      width: 80vw;
+    }
+  
+    .--not-mobile{
+      display: none;
+    }
+    address{
+      font-size: 20px;
+      font-style: normal;
+    }
+  
+    /* --------------------------------Header */
+  
+    .ul__nav{
+      display: none;
+    }
+    .ul__nav.--mobile{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 198px;
+    }
+  
+    .header{
+      display: none;
+    }
+    .header.--mobile{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3vh;
+    }
+    .header.--mobile > button{
+      border: none;
+      background-color: transparent;
+      padding: 0;
+      height: 2vh;
+    }
+  
+    .header.--mobile > button > img{
+      height: 2vh;
+    }
+  /* ------------------------------------- */
+  /* --------------------------------Hero */
+  
+  .hero__div{
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+     .hero h1{
+      font-size: 24px;
+     }
+     .hero h4{
+      font-size: 20px;
+     }
+  
+    .hero__div--left > h1{
+      margin-bottom: 2vh;
+    }
+  
+    .hero__div--left > h4{
+      margin-bottom: 3vh;
+    }
+  
+    .hero__div--left > button{
+      display: none;
+      margin-bottom: 40px;
+      font-size: 16px;
+    } 
+  
+    .hero > .--mobile{
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 50px;
+    }
+    
+    .hero__ul{
+      display: none;
+    }
+  
+  
+    .hero__ul.--mobile{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+  
+    .hero__ul > .--mobile{
+      gap: 1vh;
+      display: block;
+    }
+    .hero__ul > .--not-mobile{
+      display: none;
+    }
+  
+    .hero__ul>li{
+      font-size: 14px;
+    }
+  
+    .hero__img{
+      /* height: clamp(250px, 492px, 492px); */
+      margin: 0;
+    }
+  
+    .hero__img > img{
+      height: 30%;
+      border-radius: 60px;
+    }
+  
+  /* ------------------------------------------------ */
+  /* ----------------------------------------- Ключи */
+  /* ------------------------------------------------ */
+.register__form{
+  width: 80vw;
+}
+  .frm--button{
+    font-size: 16px;
+  }
+
+  .frm--button > button{
+    padding: 8px 20px;
+    height: 40px;
+  }
+  .frm--button > button > p{
+    margin: 0;
+    color: var(--color-black);
+  }
+
+  /* -------------------------------------------Grid */
+  .grid{
+    display: none;
+  }
+  
+  .grid p{
+    font-size: 16px;
+  }
+  
+  .grid h3{
+    font-size: 16px;
+  }
+  
+  .grid.--mobile{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 2vh;
+  }
+  
+  .grid > div > img{
+    width: 100%;
+    margin-top: 24px;
+  }
+  
+  .grid > div >  h3{
+    margin-bottom: 24px;
+  }
+  
+  .grid-1{
+    padding-left: 0;
+  }
+  .grid-3{
+    padding-left: 0;
+  }
+  .grid-5{
+    padding-left: 0;
+  }
+  
+  .grid > div > button{
+    padding: 14px 32px 14px;
+    font-size: 16px;
+    display: block;
+    margin: 0 auto;
+  }
+  /* ------------------------------------------------ */
+  /* -------------------------------------------Footer */
+  
+  .--mobile-double{
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+  }
+  
+  footer{
+    width: 90vw;
+  }
+  
+  .footer__ul  img{
+    width: 30vw;
+    display: inline-block;
+  }
+  
+  .footer__ul a, p{
+    display: block;
+    font-size: 14px;
+    color: var(--color-black);
+    text-decoration: none;
+    display: inline-block;
+  }
+  .footer__ul.--mobile-double > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  
+  .ul__footer{
+    display: none;
+  }
+  .ul__footer--contacts{
+    display: none;
+  }
+  
+  .ul__footer > li{
+    display: inline-block;
+    max-width: 306px;
+  }
+  
+  .social--media.--not-mobile{
+    display: none;
+  }
+  
+  .footer__ul.--mobile{
+    display: block;
+    font-size: 14px;
+  }
+  
+  .rules{
+    text-decoration: solid;
+  }
+  
+  /* ------------------------------------------------ */
+  
+  .--not-mobile{
+    display: none !important;
+  }
+  }
+
+
+  @media(max-width: 500px){
+    .frm--button{
+      flex-direction: column;
+      justify-content: stretch;
+    }
+
+    .frm--left{
+      border-radius: 0;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      background-color: var(--color-dark-white);
+      background-color: #D9D9D9;
+      
+    }
+    .frm--right{
+      border-radius: 0;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      background-color: var(--color-dark-white);
+      background-color: #D9D9D9;
+      padding: 8px 2px !important;
+    }
+
+  }
+
+  .tel {
+    text-decoration: none;
+    color: var(--color-black);
+  }
+  
+  #mobileMenu{
+    background-color: var(--color-dark-white);
+    color: var(--color-black);
+    padding: 3vw;
+    display: none;
+    flex-direction: row;
+    text-align: left;
+    transition: transform 1s ease-in-out;
+  }
+  
+  .ul__mobile--menu li {
+    font-size: 20px;
+}
