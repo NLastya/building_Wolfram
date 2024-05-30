@@ -243,6 +243,24 @@ li.--mobile{
 .header.--mobile{
   display: none;
  }
+
+ .btn--blue > a{
+  color: white;
+  text-decoration: none;
+ }
+
+ .btn--blue > a:hover{
+  color: white;
+ }
+
+ .btn--white > a{
+  color: var(--color-dark-blue);
+  text-decoration: none;
+ }
+
+ .btn--white > a:hover{
+  color: var(--color-dark-blue);
+ }
 /* ----------------------------------------------------------- */
 
 .header{

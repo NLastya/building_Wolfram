@@ -243,6 +243,11 @@
   .header.--mobile{
     display: none;
    }
+
+   nav a{
+    text-decoration: none;
+    color: black; 
+  }
   /* ----------------------------------------------------------- */
   
   .header{

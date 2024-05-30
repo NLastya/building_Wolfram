@@ -239,7 +239,30 @@
     color: var(--color-dark-blue);
     font-family: 'Moncerrat Bold';
     padding: 18px 42px 16px;
-  
+  }
+
+
+  .frm--button  a{
+    color: var(--color-black);
+    text-decoration: none;
+  }
+
+  .frm--button  a:hover{
+    color: var(--color-black);
+  }
+
+  .frm--button .--chosen > a{
+    color: white;
+  }
+
+  .frm--button .--chosen > a:hover{
+    color: white;
+    text-decoration: none;
+  }
+
+  nav a{
+    text-decoration: none;
+    color: black; 
   }
   
   li.--mobile{
@@ -249,6 +272,11 @@
   .header.--mobile{
     display: none;
    }
+
+   nav a{
+    text-decoration: none;
+    color: black; 
+  }
   /* ----------------------------------------------------------- */
   
   .header{
@@ -882,6 +910,10 @@
       font-size: 20px;
       font-style: normal;
     }
+
+    .frm--button a{
+      font-size: 14px;
+    }
   
     /* --------------------------------Header */
   
@@ -930,31 +962,6 @@
      .hero h4{
       font-size: 20px;
      }
-  
-    .hero__div--left > h1{
-      margin-bottom: 2vh;
-    }
-  
-    .hero__div--left > h4{
-      margin-bottom: 3vh;
-    }
-  
-    .hero__div--left > button{
-      display: none;
-      margin-bottom: 40px;
-      font-size: 16px;
-    } 
-  
-    .hero > .--mobile{
-      display: block;
-      margin: 0 auto;
-      margin-bottom: 50px;
-    }
-    
-    .hero__ul{
-      display: none;
-    }
-  
   
     .hero__ul.--mobile{
       display: flex;
