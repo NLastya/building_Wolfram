@@ -163,15 +163,10 @@ body {
 /**
   Приводим к единому цвету svg-элементы
  */
-svg *[fill] { fill: currentColor }
-svg *[stroke] { stroke: currentColor }
 
 /**
   Чиним баг задержки смены цвета при взаимодействии с svg-элементами
  */
-svg * {
-  transition-property: fill, stroke;
-}
 
 /**
   Удаляем все анимации и переходы для людей,
@@ -211,14 +206,6 @@ button{
   font-size: 28px;
 }
 
-.btn--blue{
-  background-color: var(--color-dark-blue);
-  color: var(--white);
-  font-size: 28px;
-  box-shadow: 0 3 0 30 var(--color-dark-blue);
-  border: 0px;
-}
-
 .btn--white{
   font-size: 24px;
   border: 2px solid var(--color-dark-blue);
@@ -233,23 +220,44 @@ nav a{
   color: black; 
 }
 
-.btn--blue > a{
-  color: white;
-  text-decoration: none;
- }
-
- .btn--blue > a:hover{
-  color: white;
- }
-
  .btn--white > a{
   color: var(--color-dark-blue);
   text-decoration: none;
  }
+ .btn--blue {
+  background-color: var(--color-dark-blue);
+  color: var(--white);
+  font-size: 28px;
+  box-shadow: 0 3 0 30 var(--color-dark-blue);
+  border: 0px;
+}
 
  .btn--white > a:hover{
   color: var(--color-dark-blue);
  }
+
+ .btn--blue > a{
+  color: white;
+  text-decoration: none;
+}
+
+.btn--blue > a:hover{
+  color: white;
+}
+
+.btn--blue > a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn--white > a{
+  color: var(--color-dark-blue);
+  text-decoration: none;
+}
+
+.btn--white > a:hover{
+  color: var(--color-dark-blue);
+}
 /* ----------------------------------------------------------- */
 
 .footer{
@@ -282,11 +290,6 @@ nav a{
   text-decoration: none;
 
 }
-
-.ul__nav > a:hover{
- color: var(--color-dark-blue);
-
-}
 .--inner{
   display: none;
 }
@@ -294,56 +297,14 @@ nav a{
   display: none;
  }
 /* --------------------------------------------hero-секция */
-.hero__div{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 
 /* .hero__ul{
 
 } */
-h1{
-  font-size: 48px;
 
-}
-
-h1, h2, h3{
+h3{
   color: var(--color-dark-blue);
   font-family: 'Moncerrat SemiBold';
-
-}
-
-h2{
-  font-size: 48px;
-
-}
-
-h4{
-  font-family: 'Moncerrat Medium';
-  font-size: 24px;
-
-}
-.hero__h4{
-  margin-bottom: 98px;
-}
-
-.hero__ul{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 95px;
-}
-
-
-.hero__ul>li{
-  display: inline-block;
-  background-color: var(--color-medium-blue);
-  border-radius: 30px;
-  font-family: 'Moncerrat';
-  font-size: 20px;
-  padding: 20px 13px 20px 13px;
-  white-space: nowrap;
 
 }
 
@@ -408,10 +369,6 @@ h4{
   margin-bottom: 50px;
 }
 
-.grid-3 button{
-  margin-bottom: 70px;
-}
-
 .span__services{
   display: flex;
   flex-direction: row;
@@ -469,10 +426,6 @@ h4{
 
 }
 
-.ul__footer > a:hover{
- color: var(--color-dark-blue);
-}
-
 .social--media{
   display: flex;
   flex-direction: row;
@@ -499,24 +452,10 @@ h4{
   button{
     font-size: 20px;
   }
-  .btn--blue{
-    font-size: 24px;
-    padding: 11px 14px 11px;
-  }
-
-  .container__wrapper{
-    max-width: 704px;
-    min-width: 428px;
-    /* width: 80vw; */
-  }
 
   .btn--white{
     font-size: 16px;
     padding: 12px 30px 12px;
-  }
-
-  li.--mobile{
-    display: none;
   }
 
   .--inner{
@@ -530,10 +469,6 @@ h4{
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 198px;
-  }
-
-  .header > img{
-    width: 20vw;
   }
 
   .header{
@@ -550,11 +485,6 @@ h4{
 
 .grid h3{
   margin: 0;
-}
-
-.grid-1 > span > button{
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .grid.--mobile{
@@ -644,19 +574,9 @@ h4{
   button{
     font-size: 16px;
   }
-  .btn--blue{
-    font-size: 16px;
-    padding: 20px 32px 20px;
-  }
 
   .btn--white{
     font-size: 16px;
-  }
-
-  .container__wrapper{
-    max-width: 704px;
-    min-width: 200px;
-    /* width: 80vw; */
   }
 
   .--not-mobile{
@@ -680,74 +600,6 @@ h4{
 /* ------------------------------------- */
 /* --------------------------------Hero */
 
-.hero__div{
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-   .hero h1{
-    font-size: 24px;
-   }
-   .hero h4{
-    font-size: 20px;
-   }
-
-  .hero__div--left > h1{
-    margin-bottom: 2vh;
-  }
-
-  .hero__div--left > h4{
-    margin-bottom: 3vh;
-  }
-
-  .hero__div--left > button{
-    display: none;
-    margin-bottom: 40px;
-    font-size: 16px;
-  } 
-
-  .hero > .--mobile{
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 50px;
-  }
-  
-  .hero__ul{
-    display: none;
-  }
-
-
-  .hero__ul.--mobile{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-  }
-
-  .hero__ul > .--mobile{
-    gap: 1vh;
-    display: block;
-  }
-  .hero__ul > .--not-mobile{
-    display: none;
-  }
-
-  .hero__ul>li{
-    font-size: 14px;
-  }
-
-  .hero__img{
-    /* height: clamp(250px, 492px, 492px); */
-    margin: 0;
-  }
-
-  .hero__img > img{
-    height: 30%;
-    border-radius: 60px;
-  }
-
 /* ------------------------------------------------ */
 /* -------------------------------------------Grid */
 .grid{
@@ -756,10 +608,6 @@ h4{
 
 .grid p{
   font-size: 16px;
-}
-
-.grid-1 > span > button{
-  margin-top: 20px;
 }
 
 .grid h3{
@@ -873,20 +721,6 @@ h4{
   button{
     font-size: 20px;
   }
-  .btn--blue{
-    font-size: 24px;
-    padding: 11px 14px 11px;
-  }
-
-  .container__wrapper{
-    max-width: 704px;
-    min-width: 428px;
-    /* width: 80vw; */
-  }
-
-  li.--mobile{
-    display: none;
-  }
   /* --------------------------------Header */
   .ul__nav{
     display: none;
@@ -897,17 +731,9 @@ h4{
     width: 198px;
   }
 
-  .header > img{
-    width: 20vw;
-  }
-
  .header.--mobile{
   display: none;
  }
-
-  .header__div > img{
-    width: 30vw;
-  }
 
   .header__div > p{
     font-size: clamp(0.6em, 0.8em, 1em);
@@ -999,19 +825,9 @@ h4{
   button{
     font-size: 16px;
   }
-  .btn--blue{
-    font-size: 16px;
-    padding: 20px 32px 20px;
-  }
 
   .btn--white{
     font-size: 16px;
-  }
-
-  .container__wrapper{
-    max-width: 704px;
-    min-width: 200px;
-    /* width: 80vw; */
   }
 
   .--not-mobile{
@@ -1053,87 +869,8 @@ h4{
 /* ------------------------------------- */
 /* --------------------------------Hero */
 
-.hero__div{
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-   .hero h1{
-    font-size: 24px;
-   }
-   .hero h4{
-    font-size: 20px;
-   }
-
-  .hero__div--left > h1{
-    margin-bottom: 2vh;
-  }
-
-  .hero__div--left > h4{
-    margin-bottom: 3vh;
-  }
-
-  .hero__div--left > button{
-    display: none;
-    margin-bottom: 40px;
-    font-size: 16px;
-  } 
-
-  .hero > .--mobile{
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 50px;
-  }
-  
-  .hero__ul{
-    display: none;
-  }
-
-
-  .hero__ul.--mobile{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-  }
-
-  .hero__ul > .--mobile{
-    gap: 1vh;
-    display: block;
-  }
-  .hero__ul > .--not-mobile{
-    display: none;
-  }
-
-  .hero__ul>li{
-    font-size: 14px;
-  }
-
-  .hero__img{
-    /* height: clamp(250px, 492px, 492px); */
-    margin: 0;
-  }
-
-  .hero__img > img{
-    height: 30%;
-    border-radius: 60px;
-  }
-
 /* ------------------------------------------------ */
 /* ----------------------------------------- Ключи */
-.container__wrapper--image{
-  padding: 21px 0px 65px 0px;
-  margin-bottom: 4vh;
-}
-.onimage--text > h2{
-  font-size: 20px;
-}
-.onimage--text > p{
-  font-size: 14px;
-  margin-bottom: 3vh;
-}
 /* ------------------------------------------------ */
 /* -------------------------------------------Grid */
 .grid{

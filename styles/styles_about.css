@@ -163,15 +163,10 @@
   /**
     Приводим к единому цвету svg-элементы
    */
-  svg *[fill] { fill: currentColor }
-  svg *[stroke] { stroke: currentColor }
   
   /**
     Чиним баг задержки смены цвета при взаимодействии с svg-элементами
    */
-  svg * {
-    transition-property: fill, stroke;
-  }
   
   /**
     Удаляем все анимации и переходы для людей,
@@ -216,28 +211,6 @@
     border-radius: 60px;
     padding: 24px 45px 24px 44px;
     font-size: 28px;
-  }
-  
-  .btn--blue{
-    background-color: var(--color-dark-blue);
-    color: var(--white);
-    font-size: 28px;
-    box-shadow: 0 3 0 30 var(--color-dark-blue);
-    border: 0px;
-  }
-  
-  .btn--white{
-    font-size: 24px;
-    border: 2px solid var(--color-dark-blue);
-    background-color: var(--color-light-blue);
-    color: var(--color-dark-blue);
-    font-family: 'Moncerrat Bold';
-    padding: 18px 42px 16px;
-  
-  }
-  
-  li.--mobile{
-    display: none;
   }
   
   .header.--mobile{
@@ -293,11 +266,6 @@
   
   }
   
-  .ul__nav > a:hover{
-   color: var(--color-dark-blue);
-  
-  }
-  
   .--mobile{
     display: none;
   }
@@ -324,51 +292,9 @@
   
   }
   
-  h1, h2, h3{
+  h1{
     color: var(--color-dark-blue);
     font-family: 'Moncerrat SemiBold';
-  
-  }
-  
-  h2{
-    font-size: 48px;
-  
-  }
-  
-  h4{
-    font-family: 'Moncerrat Medium';
-    font-size: 24px;
-  
-  }
-  .hero__h4{
-    margin-bottom: 98px;
-  }
-  
-  .hero__ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    margin-bottom: 95px;
-    gap: 2%;
-    flex-wrap: wrap;
-  }
-  
-  
-  .hero__ul>li{
-    display: inline-block;
-    background-color: var(--color-medium-blue);
-    border-radius: 30px;
-    font-family: 'Moncerrat';
-    font-size: 20px;
-    padding: 20px 13px 20px 13px;
-    white-space: nowrap;
-  
-  }
-  
-  .hero__ul>li> span{
-    font-family: 'Moncerrat SemiBold';
-    color: var(--color-dark-blue);
-    white-space: nowrap;
   
   }
   
@@ -385,102 +311,11 @@
     border-radius: 60px;
   }
   
-  .hero__ul.--mobile{
-    display: none;
-  }
-  
   /* ----------------------------------------------------------------------------Сектор с изображением на бекграунде */
-  .sector__onimage>h2{
-    color: var(--color-dark-white);
-  }
-  
-  .container__wrapper--image{
-    margin: 0px 0px 74px 0px;
-    background-image: url(./src/background/О\ нас\ ПКback.png);
-    background-size: 100% 100%;
-    background-size: cover;
-    background-position: left top;
-    padding: 68px 0px 153px 0px;
-  
-  }
-  
-  .onimage--text{
-    max-width: 608px;
-  }
-  
-  .sector__onimage p{
-    color: var(--color-dark-white);
-    font-size: 24px;
-    font-family: 'Moncerrat SemiBold';
-    margin-bottom: 60px;
-  }
-  
-  .sector__onimage h2{
-    color: var(--white);
-  }
-  
-  
-  @media(min-width: 960px){
-    
-  }
   
   /* -------------------------------------------------------------------------------------------------------------------- */
   
   /* ---------------------------------------------------------------------------------Сектор с ключами */
-  .grid{
-    width: 100%;
-    display: grid;
-    grid-template-rows: minmax(354px, auto) minmax(384px, auto);
-    grid-template-columns: 1fr 0.87fr 1fr;
-    margin-bottom: 98px;
-  
-  }
-  
-  .grid.--mobile{
-    display: none;
-  }
-  
-  .grid > div{
-      /* max-width: 354px; */
-      overflow: hidden;
-  }
-  
-  .grid > div > img{
-    /* width: auto; Автоматическая ширина изображения */
-    height: 100%; 
-    object-fit: fill;
-  }
-  .grid p{
-    font-size: 24px;
-    line-height: 1.25;
-    margin: 0;
-  }
-  
-  .grid h3{
-    color: var(--color-dark-blue);
-    font-size: 24px;
-    font-family: 'Moncerrat SemiBold';
-    margin: 0;
-  
-  }
-  
-  .grid-1{
-    padding-left: 3%;
-  }
-  .grid-3{
-    padding-left: 3%;
-  }
-  .grid-5{
-      padding-left: 3%;
-  }
-  
-  .grid > div > button{
-    display: block;
-    margin: 0 auto;
-    font-size: clamp(0.5rem, 1.5vw, 2rem);
-    padding: 18px 42px 18px;
-    font-size: 24px;
-  }
   
   .hero__div--left > a{
     font-size: 16px;
@@ -530,11 +365,6 @@
     text-decoration: solid;
   }
   
-  .ul__footer > a:hover{
-   color: var(--color-dark-blue);
-  
-  }
-  
   .footer .social--media > a > img{
     width: 37px;
     height: 37px;
@@ -554,19 +384,11 @@
     button{
       font-size: 20px;
     }
-    .btn--blue{
-      font-size: 24px;
-      padding: 11px 14px 11px;
-    }
   
     .container__wrapper{
       max-width: 704px;
       min-width: 428px;
       width: 80vw;
-    }
-  
-    li.--mobile{
-      display: none;
     }
     /* --------------------------------Header */
     .ul__nav{
@@ -577,14 +399,6 @@
       grid-template-columns: 1fr 1fr;
       width: 198px;
     }
-  
-    .header > img{
-      width: 30vw;
-    }
-
-    .header__div > img{
-      height: 30h;
-    }
   /* ------------------------------------- */
   /* --------------------------------Hero */
   
@@ -593,9 +407,6 @@
   }
      .hero h1{
       font-size: 40px;
-     }
-     .hero h4{
-      font-size: 20px;
      }
   
      .hero__div{
@@ -611,27 +422,6 @@
       font-size: 20px;
     }
   
-    .hero__div--left > h4{
-      margin-bottom: 6vh;
-    }
-  
-    .hero__div--left > button{
-      margin-bottom: 10vh;
-    } 
-    .hero__ul{
-      display: none;
-    }
-  
-    .hero__ul.--mobile{
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10vh;
-    }
-  
-    .hero__ul>li{
-      font-size: 14px;
-    }
-  
     .hero__img{
       height: 354px;
       margin: 0;
@@ -644,51 +434,8 @@
   
   /* ------------------------------------------------ */
   /* ----------------------------------------- Ключи */
-  .container__wrapper--image{
-    padding: 21px 0px 65px 0px;
-  }
-  .onimage--text > h2{
-    font-size: 32px;
-  }
-  .onimage--text > p{
-    font-size: 16px;
-  }
   /* ------------------------------------------------ */
   /* -------------------------------------------Grid */
-  .grid{
-    display: none;
-  }
-  
-  .grid.--mobile{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 22px;
-  }
-  
-  .grid > div > img{
-    width: 100%;
-    margin-top: 24px;
-  }
-  
-  .grid > div >  h3{
-    margin-bottom: 24px;
-  }
-  
-  .grid-1{
-    padding-left: 0;
-  }
-  .grid-3{
-    padding-left: 0;
-  }
-  .grid-5{
-    padding-left: 0;
-  }
-  
-  .grid > div > button{
-    display: block;
-    margin: 0 auto;
-  }
   /* ------------------------------------------------ */
   /* -------------------------------------------Footer */
   .footer{
@@ -737,14 +484,6 @@
   @media(max-width: 900px){
     /* Общие стили */
     button{
-      font-size: 16px;
-    }
-    .btn--blue{
-      font-size: 16px;
-      padding: 20px 32px 20px;
-    }
-  
-    .btn--white{
       font-size: 16px;
     }
   
@@ -802,52 +541,9 @@
      .hero h1{
       font-size: 24px;
      }
-     .hero h4{
-      font-size: 20px;
-     }
   
     .hero__div--left > h1{
       margin-bottom: 2vh;
-    }
-  
-    .hero__div--left > h4{
-      margin-bottom: 3vh;
-    }
-  
-    .hero__div--left > button{
-      display: none;
-      margin-bottom: 40px;
-      font-size: 16px;
-    } 
-  
-    .hero > .--mobile{
-      display: block;
-      margin: 0 auto;
-      margin-bottom: 50px;
-    }
-    
-    .hero__ul{
-      display: none;
-    }
-  
-  
-    .hero__ul.--mobile{
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-    }
-  
-    .hero__ul > .--mobile{
-      gap: 1vh;
-      display: block;
-    }
-    .hero__ul > .--not-mobile{
-      display: none;
-    }
-  
-    .hero__ul>li{
-      font-size: 14px;
     }
   
     .hero__img{
@@ -869,63 +565,8 @@
     }
   /* ------------------------------------------------ */
   /* ----------------------------------------- Ключи */
-  .container__wrapper--image{
-    padding: 21px 0px 65px 0px;
-    margin-bottom: 4vh;
-  }
-  .onimage--text > h2{
-    font-size: 20px;
-  }
-  .onimage--text > p{
-    font-size: 14px;
-    margin-bottom: 3vh;
-  }
   /* ------------------------------------------------ */
   /* -------------------------------------------Grid */
-  .grid{
-    display: none;
-  }
-  
-  .grid p{
-    font-size: 16px;
-  }
-  
-  .grid h3{
-    font-size: 16px;
-  }
-  
-  .grid.--mobile{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 2vh;
-  }
-  
-  .grid > div > img{
-    width: 100%;
-    margin-top: 24px;
-  }
-  
-  .grid > div >  h3{
-    margin-bottom: 24px;
-  }
-  
-  .grid-1{
-    padding-left: 0;
-  }
-  .grid-3{
-    padding-left: 0;
-  }
-  .grid-5{
-    padding-left: 0;
-  }
-  
-  .grid > div > button{
-    padding: 14px 32px 14px;
-    font-size: 16px;
-    display: block;
-    margin: 0 auto;
-  }
   /* ------------------------------------------------ */
   /* -------------------------------------------Footer */
   

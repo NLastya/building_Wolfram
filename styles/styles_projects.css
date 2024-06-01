@@ -166,15 +166,10 @@
   /**
     Приводим к единому цвету svg-элементы
    */
-  svg *[fill] { fill: currentColor }
-  svg *[stroke] { stroke: currentColor }
   
   /**
     Чиним баг задержки смены цвета при взаимодействии с svg-элементами
    */
-  svg * {
-    transition-property: fill, stroke;
-  }
   
   /**
     Удаляем все анимации и переходы для людей,
@@ -212,14 +207,6 @@
     font-size: 28px;
   }
   
-  .btn--blue{
-    background-color: var(--color-dark-blue);
-    color: var(--white);
-    font-size: 28px;
-    box-shadow: 0 3 0 30 var(--color-dark-blue);
-    border: 0px;
-  }
-  
   .btn--white{
     font-size: 24px;
     border: 2px solid var(--color-dark-blue);
@@ -239,15 +226,6 @@
     width: 80vw;
     margin: 0 auto;
   }
-
-  .btn--blue > a{
-    color: white;
-    text-decoration: none;
-   }
-  
-   .btn--blue > a:hover{
-    color: white;
-   }
   
    .btn--white > a{
     color: var(--color-dark-blue);
@@ -293,14 +271,6 @@
     color: var(--color-black);
     text-decoration: none;
   
-  }
-  
-  .ul__nav > a:hover{
-   color: var(--color-dark-blue);
-  
-  }
-  .--inner{
-    display: none;
   }
   .header.--mobile{
     display: none;
@@ -358,12 +328,6 @@ h1{
     width: 30vw;
     height: 60vh;
   }
-
-  .grid p{
-    font-size: 24px;
-    line-height: 1.25;
-    margin: 0;
-  }
   
   .grid-1, .grid-3, .grid-2{
     display: flex;
@@ -382,29 +346,8 @@ h1{
     margin: 0 auto;
   }
   
-  .grid h3{
-    color: var(--color-dark-blue);
-    font-size: 24px;
-    font-family: 'Moncerrat SemiBold';
-    margin: 0;
-    margin-top: 145px;
-    margin-bottom: 44px;
-  
-  }
-  
-  .grid > div > p{
-    margin-bottom: 50px;
-  }
-  
   .grid-3 button{
     margin-bottom: 70px;
-  }
-  
-  .span__services{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: end;
   }
   
   .--mobile{
@@ -457,10 +400,6 @@ h1{
   
   }
   
-  .ul__footer > a:hover{
-   color: var(--color-dark-blue);
-  }
-  
   .footer .social--media > a > img{
     width: 37px;
     height: 37px;
@@ -481,10 +420,6 @@ h1{
     button{
       font-size: 20px;
     }
-    .btn--blue{
-      font-size: 24px;
-      padding: 11px 14px 11px;
-    }
   
     .container__wrapper{
       max-width: 704px;
@@ -495,14 +430,6 @@ h1{
     .btn--white{
       font-size: 16px;
       padding: 12px 30px 12px;
-    }
-  
-    li.--mobile{
-      display: none;
-    }
-  
-    .--inner{
-      display: inline-block;
     }
     address{
         font-size: 20px;
@@ -515,10 +442,6 @@ h1{
       display: grid;
       grid-template-columns: 1fr 1fr;
       width: 198px;
-    }
-  
-    .header > img{
-      width: 20vw;
     }
   
     .header{
@@ -542,17 +465,6 @@ h1{
     height: 72px;
     font-size: 24px;
   }
-
-  .grid h3{
-    margin: 0;
-  }
-  
-  .grid.--mobile{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 6vh;
-  }
   
   .grid > div > img{
     width: 100%;
@@ -566,9 +478,6 @@ h1{
   .grid-3{
     padding-left: 0;
   }
-  .grid-5{
-    padding-left: 0;
-  }
   
   .grid > div > button{
     display: block;
@@ -578,14 +487,6 @@ h1{
   
   .grid > div {
     overflow: visible;
-  }
-  
-  .grid > div > p {
-    margin-bottom: 0;
-  }
-  
-  .grid > div > h3 {
-    margin-bottom: 6px;
   }
 
   .grid-1, .grid-3, .grid-2{
@@ -658,10 +559,6 @@ h1{
     button{
       font-size: 16px;
     }
-    .btn--blue{
-      font-size: 16px;
-      padding: 20px 32px 20px;
-    }
   
     .btn--white{
       font-size: 16px;
@@ -693,29 +590,10 @@ h1{
     }
   /* ------------------------------------- */
   /* -------------------------------------------Grid */
-
-  .grid p{
-    font-size: 16px;
-  }
-  
-  .grid h3{
-    font-size: 16px;
-  }
-  
-  .grid.--mobile{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 6vh;
-  }
   
   .grid > div > img{
     width: 100%;
     margin-top: 24px;
-  }
-  
-  .grid > div >  h3{
-    margin-bottom: 24px;
   }
   
   .grid-1{
@@ -724,18 +602,12 @@ h1{
   .grid-3{
     padding-left: 0;
   }
-  .grid-5{
-    padding-left: 0;
-  }
   
   .grid > div > button{
     padding: 14px 32px 14px;
     font-size: 16px;
     display: block;
     margin: 0 auto;
-  }
-  .grid > div > h3 {
-    margin-bottom: 6px;
   }
   /* ------------------------------------------------ */
   /* -------------------------------------------Footer */
@@ -809,19 +681,11 @@ h1{
     button{
       font-size: 20px;
     }
-    .btn--blue{
-      font-size: 24px;
-      padding: 11px 14px 11px;
-    }
   
     .container__wrapper{
       max-width: 704px;
       min-width: 428px;
       /* width: 80vw; */
-    }
-  
-    li.--mobile{
-      display: none;
     }
     /* --------------------------------Header */
     .ul__nav{
@@ -833,17 +697,9 @@ h1{
       width: 198px;
     }
   
-    .header > img{
-      width: 20vw;
-    }
-  
    .header.--mobile{
     display: none;
    }
-  
-    .header__div > img{
-      width: 30vw;
-    }
   
     .header__div > p{
       font-size: clamp(0.6em, 0.8em, 1em);
@@ -852,70 +708,13 @@ h1{
   /* ------------------------------------- */
   /* --------------------------------Hero */
   
-  .hero__div{
-    gap: 12px;
-  }
-     .hero h1{
-      font-size: 40px;
-     }
-     .hero h4{
-      font-size: 20px;
-     }
-  
-    .hero__div--left > h1{
-      margin-bottom: 6vh;
-      letter-spacing: normal;
-    }
-  
-    .hero__div--left > h4{
-      margin-bottom: 6vh;
-    }
-  
-    .hero__div--left > button{
-      margin-bottom: 10vh;
-    } 
-    .hero__ul{
-      display: none;
-    }
-  
-    .hero__ul.--mobile{
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10vh;
-    }
-  
-    .hero__ul>li{
-      font-size: 14px;
-    }
-  
-    .hero__img{
-      height: 354px;
-      margin: 0;
-    }
-  
-    .hero__img > img{
-      height: 354px;
-      border-radius: 60px;
-    }
-  
   /* ------------------------------------------------ */
   /* -------------------------------------------Grid */
-  
-  .grid.--mobile{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 6vh;
-    margin-bottom: 8vh;
-  }
   
   .grid-1{
     padding-left: 0;
   }
   .grid-3{
-    padding-left: 0;
-  }
-  .grid-5{
     padding-left: 0;
   }
   
@@ -982,10 +781,6 @@ h1{
     button{
       font-size: 16px;
     }
-    .btn--blue{
-      font-size: 16px;
-      padding: 20px 32px 20px;
-    }
   
     .btn--white{
       font-size: 16px;
@@ -1001,7 +796,7 @@ h1{
       display: none;
     }
 
-    h1, h2, h3{
+    h1, h2{
         font-size: clamp(1em, 1.2em, 1.5em);
     }
   
@@ -1039,17 +834,6 @@ h1{
   
   /* ------------------------------------- */
   /* ----------------------------------------- Ключи */
-  .container__wrapper--image{
-    padding: 21px 0px 65px 0px;
-    margin-bottom: 4vh;
-  }
-  .onimage--text > h2{
-    font-size: 20px;
-  }
-  .onimage--text > p{
-    font-size: 14px;
-    margin-bottom: 3vh;
-  }
   /* ------------------------------------------------ */
   /* -------------------------------------------Grid */
 
@@ -1066,22 +850,10 @@ h1{
     gap: 4vh;
   }
   
-  .grid p{
-    font-size: 16px;
-  }
-  
-  .grid h3{
-    font-size: 16px;
-  }
-  
   
   .grid > div > img{
     width: 100%;
     margin-top: 24px;
-  }
-  
-  .grid > div >  h3{
-    margin-bottom: 24px;
   }
   
   .grid-1{
@@ -1090,19 +862,12 @@ h1{
   .grid-3{
     padding-left: 0;
   }
-  .grid-5{
-    padding-left: 0;
-  }
   
   .grid > div > button{
     padding: 14px 32px 14px;
     font-size: 16px;
     display: block;
     margin: 0 auto;
-  }
-  
-  .grid > div > p {
-    margin-bottom: 0;
   }
   /* ------------------------------------------------ */
   /* -------------------------------------------Footer */
@@ -1158,9 +923,6 @@ h1{
   
   .rules{
     text-decoration: solid;
-  }
-  .--inner{
-    display: none;
   }
   
   /* ------------------------------------------------ */

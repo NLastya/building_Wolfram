@@ -163,15 +163,10 @@ body {
 /**
   Приводим к единому цвету svg-элементы
  */
-svg *[fill] { fill: currentColor }
-svg *[stroke] { stroke: currentColor }
 
 /**
   Чиним баг задержки смены цвета при взаимодействии с svg-элементами
  */
-svg * {
-  transition-property: fill, stroke;
-}
 
 /**
   Удаляем все анимации и переходы для людей,
@@ -311,11 +306,6 @@ nav a{
 
 }
 
-.ul__nav > a:hover{
- color: var(--color-dark-blue);
-
-}
-
 .--mobile{
   display: none;
 }
@@ -405,13 +395,10 @@ h4{
 }
 
 /* ----------------------------------------------------------------------------Сектор с изображением на бекграунде */
-.sector__onimage>h2{
-  color: var(--color-dark-white);
-}
 
 .container__wrapper--image{
   margin: 0px 0px 74px 0px;
-  background-image: url(../src/background/О\ нас\ ПКback.png);
+  background-image: url(../src/background/substrate.png);
   background-size: 100% 100%;
   background-size: cover;
   background-position: left top;
@@ -432,11 +419,6 @@ h4{
 
 .sector__onimage h2{
   color: var(--white);
-}
-
-
-@media(min-width: 960px){
-  
 }
 
 /* -------------------------------------------------------------------------------------------------------------------- */
@@ -505,12 +487,6 @@ h4{
   margin: 0 auto;
   margin-bottom: 6vh;
 }
-.map__flex{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-}
 /* -------------------------------------------------------------------------------------------------------------------- */
 
 
@@ -561,11 +537,6 @@ h4{
   text-decoration: solid;
 }
 
-.ul__footer > a:hover{
- color: var(--color-dark-blue);
-
-}
-
 .footer .social--media > a > img{
   width: 37px;
   height: 37px;
@@ -607,10 +578,6 @@ h4{
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 198px;
-  }
-
-  .header > img{
-    width: 30vw;
   }
 /* ------------------------------------- */
 /* --------------------------------Hero */
@@ -759,10 +726,6 @@ h4{
 .rules{
   text-decoration: solid;
 }
-address{
-  font-size: 20px;
-  font-style: normal;
-}
 /* ------------------------------------------------ */
 
 
@@ -792,10 +755,6 @@ address{
 
   .--not-mobile{
     display: none;
-  }
-  address{
-    font-size: 20px;
-    font-style: normal;
   }
 
   /* --------------------------------Header */

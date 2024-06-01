@@ -99,11 +99,6 @@
     объявляем локальную переменную для внешнего отступа вниз,
     чтобы избежать взаимодействие с более сложным селектором
    */
-  p {
-    --paragraphMarginBottom: 24px;
-  
-    margin-block: 0;
-  }
   
   /**
     Внешний отступ вниз для параграфа без атрибута class,
@@ -163,15 +158,10 @@
   /**
     Приводим к единому цвету svg-элементы
    */
-  svg *[fill] { fill: currentColor }
-  svg *[stroke] { stroke: currentColor }
   
   /**
     Чиним баг задержки смены цвета при взаимодействии с svg-элементами
    */
-  svg * {
-    transition-property: fill, stroke;
-  }
   
   /**
     Удаляем все анимации и переходы для людей,
@@ -207,98 +197,15 @@
   
   }
   
-  .container__wrapper--admin{
-    max-width: 1800px;
-    min-width: 800px;
-    margin: 0 auto;
-    width: 96vw;
-    height: 100%;
-  }
-  
   button{
     border-radius: 60px;
     padding: 24px 45px 24px 44px;
     font-size: 28px;
   }
-  
-  .btn--blue{
-    background-color: var(--color-dark-blue);
-    color: var(--white);
-    font-size: 28px;
-    box-shadow: 0 3 0 30 var(--color-dark-blue);
-    border: 0px;
-  }
-  
-  .btn--white{
-    font-size: 24px;
-    border: 2px solid var(--color-dark-blue);
-    background-color: var(--color-light-blue);
-    color: var(--color-dark-blue);
-    font-family: 'Moncerrat Bold';
-    padding: 18px 42px 16px;
-  
-  }
   /* ----------------------------------------------------------- */
-  
-  .header{
-    font-size: 14px;
-    font-family: 'Moncerrat';
-    color: var(--color-black);
-  
-  }
-  
-  .header{
-    display: flex;
-    flex-direction: row;
-    /* justify-content: sp */
-    align-items: end;
-  
-  }
-  
-  .hero h1{
-    margin: 0;
-    margin-bottom: 27px;
-    letter-spacing: 0.3vb;
-  }
-  
-  .ul__nav{
-    max-width: 483px;
-    width: 50%;
-    display: flex;
-    justify-content: space-between;
-  }
-  .ul__nav.--mobile{
-    display: none;
-  }
-  
-  .ul__nav>li{
-    display: inline;
-  
-  }
-  
-  .ul__nav a{
-    color: var(--color-black);
-    text-decoration: none;
-  
-  }
-  
-  .ul__nav > a:hover{
-   color: var(--color-dark-blue);
-  
-  }
   
   
   /* --------------------------------------------hero-секция */
-  .hero__div{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  
-  .hero__div--left{
-    flex: 4 0 60%;
-  }
   
   h1{
     font-size: 48px;
@@ -314,12 +221,6 @@
   
   h2{
     font-size: 48px;
-  
-  }
-  
-  h4{
-    font-family: 'Moncerrat Medium';
-    font-size: 24px;
   
   }
   
@@ -350,12 +251,6 @@
     height: 100%;
 }
 
-.admin-panel--right > h2{
-    display: inline-block;
-    color: var(--color-black);
-    font-size: 36px;
-}
-
 input[type=text] {
   width: 300px;
   box-sizing: border-box;
@@ -380,11 +275,6 @@ h2{
   display: inline-block;
   color: var(--color-black);
   font-size: 36px;
-}
-
-.grid-1 > img{
-    display: block;
-    margin-bottom: auto;
 } 
 
 .grid-2 > h1{
@@ -454,6 +344,11 @@ padding-left: 3%;
   padding: 0px;
   cursor: pointer;
   font-size: 20px;
+  margin-top: -40px
+}
+
+.btn--delete{
+  margin-top: -64px
 }
 
 @media(min-width: 900px){
@@ -506,15 +401,6 @@ padding-left: 3%;
     line-height: 1.5;
 
   }
-  .table-header{
-    display: none;
-    /* border-bottom: 2px solid #767676; */
-    font-size: 12px;
-    color: 767676;
-    font-weight: 400;
-    width: 110%;
-
-  }
 ::-webkit-scrollbar {
     width: 3px;
 
@@ -530,18 +416,6 @@ padding-left: 3%;
   border-radius: 30px;
   
 }
-
-
-  @media (min-width: 500px) {
-    .table-header {
-      font-weight: 700;
-      font-size: 12px;
-      color: #767676;
-      font-weight: 400;
-      width: 106% !important;
-
-    }
-  }
   .table-row {
     width: 100%;
   }
@@ -593,9 +467,6 @@ padding-left: 3%;
     margin-right: 1vw;
 
   }
-  .--info{
-    margin-right: 0.5vw;
-  }
 
   .table-row .table-row-item:nth-of-type(1){
     /* width: 20px; */
@@ -624,54 +495,6 @@ padding-left: 3%;
     margin-right: -15px;
   }
   /* ----------------------------------------------------------------------------- */
-
-
-  .grid{
-    width: 100%;
-    display: grid;
-    grid-template-rows: minmax(354px, auto) minmax(384px, auto);
-    grid-template-columns: 1fr 0.87fr 1fr;
-    margin-bottom: 98px;
-  
-  }
-  
-  .grid.--mobile{
-    display: none;
-  }
-  
-  .grid > div{
-      /* max-width: 354px; */
-      overflow: hidden;
-  }
-  
-  .grid > div > img{
-    /* width: auto; Автоматическая ширина изображения */
-    height: 100%; 
-    object-fit: fill;
-  }
-  .grid p{
-    font-size: 24px;
-    line-height: 1.25;
-    margin: 0;
-  }
-  
-  .grid h3{
-    color: var(--color-dark-blue);
-    font-size: 24px;
-    font-family: 'Moncerrat SemiBold';
-    margin: 0;
-  
-  }
-  
-
-  
-  .grid > div > button{
-    display: block;
-    margin: 0 auto;
-    font-size: clamp(0.5rem, 1.5vw, 2rem);
-    padding: 18px 42px 18px;
-    font-size: 24px;
-  }
   
   /* -------------------------------------------------------------------------------------------------------------------- */
   
@@ -689,27 +512,8 @@ padding-left: 3%;
     button{
       font-size: 20px;
     }
-    .btn--blue{
-      font-size: 24px;
-      padding: 11px 14px 11px;
-    }
-  
-    .container__wrapper{
-      max-width: 704px;
-      min-width: 428px;
-      width: 80vw;
-      height: 100%;
-    }
   
     /* --------------------------------Header */
-    .ul__nav{
-      display: none;
-    }
-    .ul__nav.--mobile{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      width: 198px;
-    }
  
   /* ------------------------------------------------ */
   /* ----------------------------------------- Admin */
@@ -727,39 +531,12 @@ padding-left: 3%;
   }
   /* ------------------------------------------------ */
   /* -------------------------------------------Grid */
-  .grid{
-    display: none;
-  }
-  
-  .grid.--mobile{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 22px;
-  }
-  
-  .grid > div > img{
-    width: 100%;
-    margin-top: 24px;
-  }
-  
-  .grid > div >  h3{
-    margin-bottom: 24px;
-  }
   
   .grid-1{
     padding-left: 0;
   }
   .grid-3{
     padding-left: 0;
-  }
-  .grid-5{
-    padding-left: 0;
-  }
-  
-  .grid > div > button{
-    display: block;
-    margin: 0 auto;
   }
   /* ------------------------------------------------ */
   .input__flex{
@@ -775,33 +552,6 @@ padding-left: 3%;
     font-size: 36px;
   }
   /* -------------------------------------------Footer */
-  .footer{
-    margin-bottom: 103px;
-  }
-  .ul__footer{
-    display: none;
-  }
-  .ul__footer--contacts{
-    display: none;
-  }
-  
-  .ul__footer > li{
-    display: inline-block;
-    max-width: 306px;
-  }
-  
-  .social--media{
-    display: none;
-  }
-  
-  .footer__ul.--mobile{
-    display: block;
-    font-size: 14px;
-  }
-  
-  .rules{
-    text-decoration: solid;
-  }
   /* ------------------------------------------------ */
   
   
@@ -815,29 +565,7 @@ padding-left: 3%;
   .grid-4{
     grid-column: span 2;
   }
-  .header{
-  margin-bottom: 40px;
-  }
   h1, h2{
     margin: 12px;
   }
-}
-
-.tel {
-  text-decoration: none;
-  color: var(--color-black);
-}
-
-#mobileMenu{
-  background-color: var(--color-dark-white);
-  color: var(--color-black);
-  padding: 3vw;
-  display: none;
-  flex-direction: row;
-  text-align: left;
-  transition: transform 1s ease-in-out;
-}
-
-.ul__mobile--menu li {
-  font-size: 20px;
 }

@@ -259,6 +259,11 @@
     color: white;
   }
 
+  .btn--blue > a {
+    color: white;
+    text-decoration: none;
+}
+
   .btn--white > a{
     color: var(--color-dark-blue);
     text-decoration: none;

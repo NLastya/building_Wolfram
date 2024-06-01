@@ -1,0 +1,866 @@
+@font-face {
+  font-family: 'Moncerrat';
+  src: url('../fonts/Montserrat-Regular.woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Moncerrat SemiBold';
+  src: url('../fonts/Montserrat-SemiBold.woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Moncerrat Medium';
+  src: url('../fonts/Montserrat-Medium.woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Moncerrat Bold';
+  src: url('../fonts/Montserrat-Bold.woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+  
+  /**
+    Нормализация блочной модели
+   */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  /**
+    Убираем внутренние отступы слева тегам списков,
+    у которых есть атрибут class
+   */
+  :where(ul, ol):where([class]) {
+    padding-left: 0;
+  }
+  
+  /**
+    Убираем внешние отступы body и двум другим тегам,
+    у которых есть атрибут class
+   */
+  body,
+  :where(blockquote, figure):where([class]) {
+    margin: 0;
+  }
+  
+  /**
+    Убираем внешние отступы вертикали нужным тегам,
+    у которых есть атрибут class
+   */
+  :where(
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol,
+    dl
+  ):where([class]) {
+    margin-block: 0;
+  }
+  
+  :where(dd[class]) {
+    margin-left: 0;
+  }
+  
+  :where(fieldset[class]) {
+    margin-left: 0;
+    padding: 0;
+    border: none;
+  }
+  
+  /**
+    Убираем стандартный маркер маркированному списку,
+    у которого есть атрибут class
+   */
+  :where(ul[class]) {
+    list-style: none;
+  }
+  
+  /**
+    Обнуляем вертикальные внешние отступы параграфа,
+    объявляем локальную переменную для внешнего отступа вниз,
+    чтобы избежать взаимодействие с более сложным селектором
+   */
+  p {
+    --paragraphMarginBottom: 24px;
+  
+    margin-block: 0;
+  }
+  
+  /**
+    Внешний отступ вниз для параграфа без атрибута class,
+    который расположен не последним среди своих соседних элементов
+   */
+  p:where(:not([class]):not(:last-child)) {
+    margin-bottom: var(--paragraphMarginBottom);
+  }
+  
+  
+  /**
+    Упрощаем работу с изображениями
+   */
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /**
+    Наследуем свойства шрифт для полей ввода
+   */
+  /* input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+  } */
+  
+  html {
+    /**
+      Пригодится в большинстве ситуаций
+      (когда, например, нужно будет "прижать" футер к низу сайта)
+     */
+    height: 100%;
+  }
+  
+  /**
+    Плавный скролл
+   */
+  html,
+  :has(:target) {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    /**
+      Пригодится в большинстве ситуаций
+      (когда, например, нужно будет "прижать" футер к низу сайта)
+     */
+    min-height: 100%;
+    /**
+      Унифицированный интерлиньяж
+     */
+    line-height: 1.5;
+  }
+  
+  /**
+    Приводим к единому цвету svg-элементы
+   */
+  
+  /**
+    Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+   */
+  svg * {
+    transition-property: fill, stroke;
+  }
+  
+  /**
+    Удаляем все анимации и переходы для людей,
+    которые предпочитают их не использовать
+   */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  /* ------------------------------------------------------------- Общие стили */
+  :root{
+    --color-dark-blue: #1B18CB;
+    --color-dark-white: #ffffff;
+    --color-medium-blue: #D6DFFF;
+    --color-light-blue: #F2F2FF;
+    --white: #ffffff;
+    --color-black: #000000;
+    --color-blue: #A9BCFF;
+
+  
+  }
+  
+  body{
+    font-size: 24px;
+    font-family: 'Moncerrat Medium';
+    background-color: var(--color-light-blue);
+    /* padding: 0px 207px 0px 210px; */
+  
+  }
+  
+  button{
+    border-radius: 60px;
+    padding: 24px 45px 24px 44px;
+    font-size: 28px;
+  }
+  /* ----------------------------------------------------------- */
+  
+  .header{
+    font-size: 14px;
+    font-family: 'Moncerrat';
+    color: var(--color-black);
+  
+  }
+  
+  .header{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: sp */
+    align-items: end;
+  
+  }
+  
+  .ul__nav{
+    max-width: 483px;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .ul__nav.--mobile{
+    display: none;
+  }
+  
+  .ul__nav>li{
+    display: inline;
+  
+  }
+  
+  .ul__nav a{
+    color: var(--color-black);
+    text-decoration: none;
+  
+  }
+  
+  
+  /* --------------------------------------------hero-секция */
+  
+  h1{
+    font-size: 36px;
+    line-height: 1.25;
+  
+  }
+  
+  h1, h2, h3{
+    color: var(--color-dark-blue);
+    font-family: 'Moncerrat SemiBold';
+  
+  }
+  
+  h2{
+    font-size: 36px;
+    margin: 0;
+  
+  }
+  
+  /* ----------------------------------------------------------------------------Сектор admin */
+
+
+/* .flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 100%;
+    gap: 3rem;
+} */
+
+h2{
+  display: inline-block;
+  color: var(--color-black);
+  font-size: 36px;
+}
+
+.admin__img{
+    border-radius: 50%;
+}
+.admin__text > h3 > a{
+    color: var(--color-black);
+    text-decoration: none;
+    text-decoration: solid !important;
+}
+.admin__text > h3{
+    color: var(--color-black);
+    text-decoration: none;
+    margin: 0;
+    font-size: 20px;
+    font-family: 'Moncerrat SemiBold';
+}
+
+.admin__inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 120px;
+}
+  
+/* ----------------------------------------------- Applications */
+.applications li{
+  list-style-type: circle;
+  font-size: 16px;
+}
+
+.applications li{
+  display: flex;
+  flex-direction: row;
+}
+
+.applications li span{
+  flex: 14 0 0;
+}
+
+.applications li svg{
+  height: 20px;
+  flex: 1 0 0;
+}
+
+
+  /* -------------------------------------------------------------------------------------------------------------------- Scroll*/
+  
+
+::-webkit-scrollbar {
+    width: 3px;
+
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #767676;
+  height: 30px;
+  border-radius: 30px;
+  
+}
+  /* ----------------------------------------------------------------------------- */
+  
+  /* -------------------------------------------------------------------------------------------------------------------- */
+  
+  
+  /* -----------------------------------------------------------------------------------------------------------Footer */
+  
+  
+  /* -------------------------------------------------------------------------------------------------------------------- */
+  
+  
+  
+  /* --------------------------------------------Media-pal */
+  @media(max-width: 1500px){
+    /* Общие стили */
+    button{
+      font-size: 20px;
+    }
+  
+    .container__wrapper{
+      max-width: 704px;
+      min-width: 428px;
+      width: 80vw;
+      height: 100%;
+    }
+  
+    /* --------------------------------Header */ 
+  /* ------------------------------------------------ */
+  /* ----------------------------------------- Admin */
+  .admin__inner{
+    flex-direction: row;
+    align-items: center;
+    /* text-align: center; */
+    margin: 0 3vw 3vw 3vw;
+    margin-left: 20px;
+  }
+  /* ------------------------------------------------ */
+  /* -------------------------------------------Grid */
+  /* ------------------------------------------------ */
+
+  h2{
+    display: inline-block;
+    color: var(--color-black);
+    font-size: 36px;
+  }
+  /* -------------------------------------------Footer */
+  .footer{
+    margin-bottom: 103px;
+  }
+  .ul__footer{
+    display: none;
+  }
+  .ul__footer--contacts{
+    display: none;
+  }
+  
+  .ul__footer > li{
+    display: inline-block;
+    max-width: 306px;
+  }
+  
+  .social--media{
+    display: none;
+  }
+  
+  .footer__ul.--mobile{
+    display: block;
+    font-size: 14px;
+  }
+  
+  .rules{
+    text-decoration: solid;
+  }
+  /* ------------------------------------------------ */
+  
+  
+  }
+
+
+@media(max-width: 900px){
+  .--not-mobile{
+    display: none;
+  }
+  .header{
+  margin-bottom: 10px;
+  }
+  h1, h2{
+    margin: 12px;
+  }
+}
+
+.tel {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+#mobileMenu{
+  background-color: var(--color-dark-white);
+  color: var(--color-black);
+  padding: 3vw;
+  display: none;
+  flex-direction: row;
+  text-align: left;
+  transition: transform 1s ease-in-out;
+}
+
+.ul__mobile--menu li {
+  font-size: 20px;
+}
+
+.admin__img{
+  width: 150px;
+}
+  
+  /* ------------------------------------------------------------- Общие стили */
+  :root{
+    --color-dark-blue: #1B18CB;
+    --color-dark-white: #ffffff;
+    --color-medium-blue: #D6DFFF;
+    --color-light-blue: #F2F2FF;
+    --white: #ffffff;
+    --color-black: #000000;
+  
+  }
+  
+  body{
+    font-size: 24px;
+    font-family: 'Moncerrat Medium';
+    background-color: var(--color-light-blue);
+    /* padding: 0px 207px 0px 210px; */
+  
+  }
+  
+  .container__wrapper{
+    max-width: 1500px;
+    min-width: 1200px;
+    margin: 0 auto;
+    width: 80vw;
+  }
+  
+  button{
+    border-radius: 60px;
+    padding: 24px 45px 24px 44px;
+    font-size: 28px;
+  }
+  
+  .header.--mobile{
+    display: none;
+   }
+
+   nav a{
+    text-decoration: none;
+    color: black; 
+  }
+  /* ----------------------------------------------------------- */
+  
+  .header{
+    font-size: 14px;
+    font-family: 'Moncerrat';
+    color: var(--color-black);
+    margin-bottom: 20px;
+  
+  }
+  
+  .header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+  
+  }
+  
+
+  main{
+   margin-bottom: 20vh;
+  }
+  
+  .--mobile{
+    display: none;
+  }
+  
+  .--mobile-double{
+    display: none;
+  }
+  
+  /* --------------------------------------------hero-секция */
+  .admin__img{
+    width: 120px;
+    margin-left: -10px;
+  }
+  
+  h1{
+    font-size: 36px;
+    line-height: 1.25;
+  
+  }
+  h3{
+    font-size: 12px;
+  }
+  span{
+    font-size: 16px;
+  }
+
+  .admin__text h3{
+    font-size: 16px;
+  }
+  
+  h1, h2, h3{
+    color: var(--color-dark-blue);
+    font-family: 'Moncerrat SemiBold';
+  }
+  
+  h2{
+    font-size: 36px;
+  
+  }
+  
+  /* ----------------------------------------------------------------------------Сектор с изображением на бекграунде */
+  
+  /* -------------------------------------------------------------------------------------------------------------------- */
+  
+  /* ---------------------------------------------------------------------------------Сектор с ключами */
+  /* -------------------------------------------------------------------------------------------------------------------- */
+  
+  
+  /* -----------------------------------------------------------------------------------------------------------Footer */
+  .footer{
+    font-size: 14px;
+    font-family: 'Moncerrat';
+    color: var(--color-black);
+  }
+  
+  .footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+  
+  }
+  
+  .ul__footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    max-width: 228px;
+    width: 50%;
+  }
+  
+  .footer__ul.--mobile{
+    display: none;
+  }
+  
+  .ul__footer>li{
+    display: inline;
+  
+  }
+  
+  .footer a{
+    color: var(--color-black);
+    text-decoration: none;
+  }
+  
+  .footer > div > .rules{
+    text-decoration: solid;
+  }
+  
+  .footer .social--media > a > img{
+    width: 37px;
+    height: 37px;
+  }
+  
+  .social--media > a{
+      display: inline-block;
+  }
+  
+  /* -------------------------------------------------------------------------------------------------------------------- */
+  
+  
+  
+  /* --------------------------------------------Media-pal */
+  @media(max-width: 1200px){
+    
+    h1, h2{
+      font-size: min(calc(20px + 8 * (100vw - 320px) / 180), 36px);
+    }
+
+    /* Общие стили */
+    button{
+      font-size: 20px;
+    }
+  
+    .container__wrapper{
+      max-width: 704px;
+      min-width: 428px;
+      width: 80vw;
+    }
+    /* --------------------------------Header */
+    .ul__nav{
+      display: none;
+    }
+    .ul__nav.--mobile{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 198px;
+    }
+  /* ------------------------------------- */
+  /* --------------------------------Hero */
+  
+  /* ------------------------------------------------ */
+  /* ----------------------------------------- Ключи */
+
+  /* ------------------------------------------------ */
+  /* -------------------------------------------Grid */
+  /* ------------------------------------------------ */
+  /* -------------------------------------------Footer */
+  .footer{
+    margin-bottom: 103px;
+  }
+  .ul__footer{
+    display: none;
+  }
+  .ul__footer--contacts{
+    display: none;
+  }
+  
+  .ul__footer > li{
+    display: inline-block;
+    max-width: 306px;
+  }
+  
+  .social--media{
+    width: 37px;
+    height: 37px;
+  }
+  
+  .social--media > a{
+    display: inline-block;
+  }
+  
+  .social--media.--not-mobile{
+    display: none;
+  }
+  
+  .footer__ul.--mobile{
+    display: block;
+    font-size: 14px;
+  }
+  
+  .rules{
+    text-decoration: solid;
+  }
+  /* ------------------------------------------------ */
+  
+  
+  }
+  
+  
+  /* ---------------------------------------------------Mobile */
+  @media(max-width: 900px){
+    /* Общие стили */
+    button{
+      font-size: 16px;
+    }
+  
+    .container__wrapper{
+      max-width: 704px;
+      min-width: 200px;
+      width: 80vw;
+    }
+  
+    .--not-mobile{
+      display: none;
+    }
+  
+    /* --------------------------------Header */
+  
+    .ul__nav{
+      display: none;
+    }
+    .ul__nav.--mobile{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 198px;
+    }
+  
+    .header{
+      display: none;
+    }
+    .header.--mobile{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3vh;
+    }
+    .header.--mobile > button{
+      border: none;
+      background-color: transparent;
+      padding: 0;
+      height: 2vh;
+    }
+  
+    .header.--mobile > button > img{
+      height: 2vh;
+    }
+  /* ------------------------------------- */
+  /* --------------------------------Hero */
+  /* ------------------------------------------------ */
+  /* ----------------------------------------- Ключи */
+  /* ------------------------------------------------ */
+  /* -------------------------------------------Grid */
+
+
+/* ----------------------------------------------- Applications */
+.applications li{
+  list-style-type: circle;
+  font-size: 16px;
+}
+
+.applications li{
+  display: flex;
+  flex-direction: row;
+}
+
+.applications li svg{
+  height: 20px;
+}
+
+
+
+
+
+
+  /* ------------------------------------------------ */
+  /* -------------------------------------------Footer */
+  
+  .--mobile-double{
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+  }
+  
+  .footer{
+    margin-bottom: 103px;
+  }
+  
+  .footer__ul  img{
+    width: 30vw;
+    display: inline-block;
+  }
+  
+  .footer__ul a, p{
+    display: block;
+    font-size: 14px;
+    color: var(--color-black);
+    text-decoration: none;
+    display: inline-block;
+  }
+  .footer__ul.--mobile-double > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  
+  .ul__footer{
+    display: none;
+  }
+  .ul__footer--contacts{
+    display: none;
+  }
+  
+  .ul__footer > li{
+    display: inline-block;
+    max-width: 306px;
+  }
+  
+  .social--media.--not-mobile{
+    display: none;
+  }
+  
+  .footer__ul.--mobile{
+    display: block;
+    font-size: 14px;
+  }
+  
+  .rules{
+    text-decoration: solid;
+  }
+  
+  .--not-mobile{
+    display: none !important;
+  }
+  }
+
+  .tel {
+    text-decoration: none;
+    color: var(--color-black);
+  }
+  
+  #mobileMenu{
+    background-color: var(--color-dark-white);
+    color: var(--color-black);
+    padding: 3vw;
+    display: none;
+    flex-direction: row;
+    text-align: left;
+    transition: transform 1s ease-in-out;
+  }
+  
+  .ul__mobile--menu li {
+    font-size: 20px;
+}
